@@ -98,8 +98,12 @@
         document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
       }
       setHeaderHeightVar();
-      window.addEventListener('load', setHeaderHeightVar);
-      window.addEventListener('resize', setHeaderHeightVar);
+      if (window.ResizeObserver) {
+        new ResizeObserver(setHeaderHeightVar).observe(header);
+      } else {
+        window.addEventListener('load', setHeaderHeightVar);
+        window.addEventListener('resize', setHeaderHeightVar);
+      }
       window.addEventListener('orientationchange', setHeaderHeightVar);
       if (document.fonts && document.fonts.ready) {
         document.fonts.ready.then(setHeaderHeightVar);
