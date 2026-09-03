@@ -501,8 +501,8 @@ img.ls-tilt-card{
 .ls-whatsapp-float{
   position: fixed;
   right: 26px;
-  bottom: 26px;
-  z-index: 9999;
+  bottom: 96px;
+  z-index: 99998;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -649,7 +649,7 @@ img.ls-tilt-card{
   margin-bottom: 10px;
 }
 @media (max-width: 575px){
-  .ls-whatsapp-float{ width:52px; height:52px; font-size:24px; right:16px; bottom:16px; }
+  .ls-whatsapp-float{ width:52px; height:52px; font-size:24px; right:16px; bottom:80px; }
 }
 
 /* ==========================================================
