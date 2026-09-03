@@ -12,6 +12,9 @@
 
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
+  <!-- Preload the hero background image (LCP) so it starts downloading immediately -->
+  <link rel="preload" as="image" href="assets/img/travel/great-wall-jinshanling-aerial.jpg" fetchpriority="high">
+
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -86,6 +89,23 @@
 
     </div>
   </header>
+
+  <script>
+    (function () {
+      var header = document.getElementById('header');
+      if (!header) return;
+      function setHeaderHeightVar() {
+        document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
+      }
+      setHeaderHeightVar();
+      window.addEventListener('load', setHeaderHeightVar);
+      window.addEventListener('resize', setHeaderHeightVar);
+      window.addEventListener('orientationchange', setHeaderHeightVar);
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(setHeaderHeightVar);
+      }
+    })();
+  </script>
   <main class="main">
 
     <!-- Travel Hero Section -->
@@ -1050,17 +1070,17 @@
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Vendor JS Files -->
-  <script src="vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendors/php-email-form/validate.js"></script>
-  <script src="vendors/aos/aos.js"></script>
-  <script src="vendors/swiper/swiper-bundle.min.js"></script>
-  <script src="vendors/purecounter/purecounter_vanilla.js"></script>
-  <script src="vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="vendors/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendors/glightbox/js/glightbox.min.js"></script>
+  <script src="vendors/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+  <script src="vendors/php-email-form/validate.js" defer></script>
+  <script src="vendors/aos/aos.js" defer></script>
+  <script src="vendors/swiper/swiper-bundle.min.js" defer></script>
+  <script src="vendors/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="vendors/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="vendors/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="vendors/glightbox/js/glightbox.min.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
 
   <!-- Special China Travel Experiences — Auto-Sliding Teaser Carousel -->
   <script>
