@@ -2,6 +2,13 @@
 <html lang="en">
 
 <head>
+  <script>
+    // Prevent the browser from restoring a scrolled-down position on refresh
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  </script>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Home | Le Sween Holidays LLP</title>
@@ -93,22 +100,11 @@
 
   <script>
     (function () {
-      var header = document.getElementById('header');
-      if (!header) return;
-      function setHeaderHeightVar() {
-        document.documentElement.style.setProperty('--header-h', header.offsetHeight + 'px');
-      }
-      setHeaderHeightVar();
-      if (window.ResizeObserver) {
-        new ResizeObserver(setHeaderHeightVar).observe(header);
-      } else {
-        window.addEventListener('load', setHeaderHeightVar);
-        window.addEventListener('resize', setHeaderHeightVar);
-      }
-      window.addEventListener('orientationchange', setHeaderHeightVar);
-      if (document.fonts && document.fonts.ready) {
-        document.fonts.ready.then(setHeaderHeightVar);
-      }
+      window.addEventListener('load', function () {
+        if (!location.hash) {
+          window.scrollTo(0, 0);
+        }
+      });
     })();
   </script>
   <main class="main">

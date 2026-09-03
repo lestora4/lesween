@@ -1083,7 +1083,7 @@ section,
 .travel-hero {
   background: linear-gradient(180deg, color-mix(in srgb, var(--background-color), transparent 10%) 0%, color-mix(in srgb, #8ea695, transparent 70%) 100%), url("../img/travel/great-wall-jinshanling-aerial.jpg") center center no-repeat;
   background-size: cover;
-  padding: 160px 0 80px;
+  padding: 180px 0 80px;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -1273,7 +1273,7 @@ section,
 
 @media (max-width: 992px) {
   .travel-hero {
-    padding: 150px 0 60px;
+    padding: 170px 0 60px;
     min-height: auto;
   }
 
@@ -1288,8 +1288,7 @@ section,
 
 @media (max-width: 768px) {
   .travel-hero {
-    /* extra top clearance so the fixed header never overlaps the badge pill */
-    padding: 148px 0 50px;
+    padding: 160px 0 50px;
   }
 
   .travel-hero .hero-content h1 {
@@ -1332,7 +1331,7 @@ section,
 
 @media (max-width: 400px) {
   .travel-hero {
-    padding: 144px 0 45px;
+    padding: 155px 0 45px;
   }
 
   .travel-hero .stats-row {
