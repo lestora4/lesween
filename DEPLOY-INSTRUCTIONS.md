@@ -80,7 +80,7 @@ work exactly as before.
 ## 3. Deploy to Vercel
 ```bash
 npm install -g vercel   # if you don't have it already
-cd leseen-holidays-llp  # this project folder
+cd lesween-holidays-llp  # this project folder
 vercel                  # first deploy, follow the prompts
 vercel --prod           # promote to production
 ```
